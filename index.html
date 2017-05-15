@@ -342,13 +342,14 @@ $ZC("#zc_trackCode").val(trackingText);
 	</br>Company </br><input type="text"  name="Company" required> </br>
 	</br>Industry</br> <input type="text"  name="Industry" required> </br>
 	</br>Your request </br> 
-	<select name="Request" required>
+	<select name="Requestdd" onchange="setRequest();" id="select_id" required>
 	 <option value="">choose one</option>
 	  <option value="demo">Request a demo</option>
 	  <option value="quote">Request a quote</option>
 	  <option value="other">Other</option>
 	</select> </br>
 	</br>Your message </br> <textarea rows="4" cols="40" name="message"> </textarea></br> </br>
+	<input type="hidden" name="Request" id="request_type">
 	
     <input type="submit" value="Submit" >
 </form> 
@@ -525,6 +526,13 @@ $ZC("#zc_trackCode").val(trackingText);
 <script src="assets/js/masonry.pkgd.min.js"></script>
 <script src="assets/js/jquery.matchHeight-min.js"></script>
 -->
+
+<script>
+function setRequest() {
+d = document.getElementById("select_id").value;
+document.getElementById("request_type").value = d;
+}
+</script>
 
 <script src="assets/js/vendors.js"></script>
 
